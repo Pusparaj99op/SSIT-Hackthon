@@ -153,3 +153,5 @@ if __name__ == '__main__':
     # Delay the browser opening to allow the server to start up
     threading.Timer(1, open_browser).start()
     app.run(debug=True, host='0.0.0.0', port=5000)
+   
+ 
