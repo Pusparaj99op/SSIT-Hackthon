@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GSEG Create Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <!-- Form Section -->
+            <div class="login-form">
+                <h1>Create Account</h1>
+                <p>Please fill in your details below</p>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <form method="POST" action="{{ url_for('register') }}">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <!-- Ensure `type="email"` for validation -->
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="sign-in-btn">CREATE ACCOUNT</button>
+                </form>
+                <p class="create-account">Already have an account? <a href="{{ url_for('login') }}">Sign in</a></p>
+            </div>
+            <!-- Right Section: Placeholder Text -->
+            <div class="login-right">
+                <h3>● G.S.E.G Stands For<br><br></h3>
+                <ul>
+                    <li>● G - Global.</li>
+                    <li>● S - Student.</li>
+                    <li>● E - Event.</li>
+                    <li>● G - Guide.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
