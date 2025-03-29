@@ -147,7 +147,7 @@ def logout():
 
 # Function to automatically open the default web browser
 def open_browser():
-    webbrowser.open_new("http://192.168.166.234:5000")
+    webbrowser.open_new("http://127.0.0.1:5000/login")
 
 if __name__ == '__main__':
     # Delay the browser opening to allow the server to start up
